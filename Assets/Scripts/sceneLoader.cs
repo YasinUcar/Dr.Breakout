@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+public class sceneLoader : MonoBehaviour
+{
+  
+    public void LoadNextScene()
+    {
+        int currentSceneIndex=SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex+1);
+        
+    }
+    public void LoadStartScene()
+    {
+        SceneManager.LoadScene(0);
+        FindObjectOfType<GameManager>().resetScore();
+    }
+
+ 
+    public void QuitGame()
+    {
+    Application.Quit();
+    }
+}
